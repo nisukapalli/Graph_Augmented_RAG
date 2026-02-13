@@ -1,2 +1,5 @@
-# Graph_Augmented_RAG
-UCLA Master's Capstone Project
+# Overview
+
+This project implements a graph-augmented RAG (retrieval-augmented generation) pipeline for question-answering over scientific papers. Traditional RAG systems rely solely on semantic similarity for retrieval, which can overlook influential but less lexically similar papers. This system augments retrieval with a citation graph structure to surface papers that are both semantically relevant and influential.
+
+A citation graph was constructed from a subset of Microsoft's Open Academic Graph, resulting in ~2.5M fully linked and pruned paper entries. PageRank was computed over the graph to capture paper influence, and dense embeddings were generated to measure semantic similarity. Candidate papers are ranked using a weighted combination of PageRank and cosine similarity. At inference time, the top-K ranked papers are passed as context to GPT-4o along with the user's query. In evaluation across 100 test queries spanning 10 disciplines, human reviewers preferred responses from this graph-augmented system over baseline GPT-4o in 84% of cases.
