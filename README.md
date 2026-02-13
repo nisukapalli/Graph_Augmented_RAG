@@ -14,7 +14,7 @@ The system consists of three main components:
 
 1. Graph Construction: Parse Open Academic Graph data and build a citation graph (~2.5M nodes).
 2. Ranking Layer: Compute PageRank scores and generate sentence embeddings for each paper.
-3. Retrieval + Generation: Rank candidates using a weighted combination of influence and similarity, then provide top-k context to GPT-4o.
+3. Retrieval + Generation: Rank candidates using a weighted combination of influence and similarity, then provide top-K context to GPT-4o.
 
 ## Tech Stack
 
